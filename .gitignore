@@ -12,7 +12,7 @@
 node_modules/
 
 # Ruby files
-Gemfile.lock
+# Gemfile.lock
 .bundle
 .byebug_history
 
