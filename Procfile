@@ -1,1 +1,1 @@
-web: cd server && bundle && ruby server.rb
+web: ruby server.rb
