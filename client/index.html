@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>PANDA Guide - Abonnement</title>
+    <meta name="description" content="Choisissez votre abonnement PANDA Guide" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <!-- Load Stripe.js on your website. -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="togethere-background"></div>
+    <div class="sr-root">
+      <div class="sr-main">
+        <header class="sr-header">
+        </header>
+
+        <h1>Choisissez un abonnement pour votre Panda</h1>
+
+        <div class="price-table-container">
+          <section>
+            <img
+              src="/img/starter.png"
+              width="120"
+              height="120"
+            />
+            <div class="name">Mensuel</div>
+            <div class="price">50 € / mois</div>
+            <div class="duration">Engagement sur 36 mois incluant 3 mois d'essai</div>
+            <button id="basic-plan-btn">Choisir</button>
+          </section>
+          <section>
+            <img
+              src="/img/professional.png"
+              width="120"
+              height="120"
+            />
+            <div class="name">Annuel</div>
+            <div class="price">540 € / an</div>
+            <div class="duration">Engement sur 3 ans avec 10% de remise par an</div>
+            <button id="pro-plan-btn">Choisir</button>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div id="error-message" class="error-message"></div>
+  </body>
+</html>
