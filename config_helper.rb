@@ -20,22 +20,27 @@ class ConfigHelper
 
     # Confirms the required environment variables have
     # been configured.
-    bail if !helper.dotenv_exists?
+    bail(helper) if !helper.dotenv_exists?
 
     # Confirms API keys are set and have the expected
     # prefixes.
-    bail if !helper.valid_api_keys?
+    bail(helper) if !helper.valid_api_keys?
 
     # Once we've done basic key validation, we can set the API
     # key and make deeper assumptions.
     Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
-    bail if !helper.valid_paths?
-    bail if !helper.valid_domain?
-    bail if !helper.valid_prices?
+    bail(helper) if !helper.valid_paths?
+    bail(helper) if !helper.valid_domain?
+    bail(helper) if !helper.valid_prices?
   end
 
-  def self.bail
+  def self.bail(helper)
+    puts "dotenv_exists? #{helper.dotenv_exists?}"
+    puts "valid_api_keys? #{helper.valid_api_keys?}"
+    puts "valid_paths? #{helper.valid_paths?}"
+    puts "valid_domain? #{helper.valid_domain?}"
+    puts "valid_prices? #{helper.valid_prices?}"
     puts ""
     puts "Please restart the server and try again."
     exit
